@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!-- materialize icons, css & js -->
+  <link type="text/css" href="/public/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/reset.css" />
+  <link rel="stylesheet" href="/public/css/style.css" />
+  <script type="text/javascript" src="/public/js/materialize.min.js"></script>
+  <link rel="manifest" href="/public/manifest.json">
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="/public/img/icons/icon-96x96.png">
+  <meta name="apple-mobile-web-app-status-bar" content="#aa7700"> <!-- TODO update colour -->
+  <meta name="theme-color" content="#ffe1c4"> <!-- TODO update colour -->
+  <title></title>
+</head>
+
+<body class="grey lighten-4">
+  <!-- top nav -->
+  <nav class="z-depth-0">
+    <div class="nav-wrapper container">
+      <a href="/" class="title">Food<span>Ninja</span></a>
+      <span class="right grey-text text-darken-1">
+        <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+      </span>
+    </div>
+  </nav>
+
+  <!-- side nav right-->
+  <ul id="side-menu" class="sidenav side-menu">
+    <li><a class="subheader">Title</a></li> <!-- Todo -->
+    <li><a href="/" class="waves-effect">Home</a></li>
+    <li><a href="/public/pages/about.html" class="waves-effect">About</a></li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li><a href="/public/pages/contact.html" class="waves-effect">
+        <i class="material-icons">mail_outline</i>Contact</a>
+    </li>
+  </ul>
+
+  <!-- recipes -->
+  <div class="recipes container grey-text text-darken-1"></div>
+
+  <div class="center">
+    <a class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form">
+      <i class="material-icons">add</i>
+    </a>
+  </div>
+
+  <!-- add recipe side nav left-->
+  <div id="side-form" class="sidenav side-form">
+    <form class="add-recipe container section">
+      <h6>New Recipe</h6>
+      <div class="divider"></div>
+      <div class="input-field">
+        <input placeholder="e.g. Ninja soup" id="title" type="text" class="validate">
+        <label for="title">Recipe Title</label>
+      </div>
+      <div class="input-field">
+        <input placeholder="e.g. Tofu, mushroom, garlic" id="ingredients" type="text" class="validate">
+        <label for="ingredients">Ingredients</label>
+      </div>
+      <div class="input-field center">
+        <button class="btn-small">Add</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- TODO Replace with your web app's Firebase configuration -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-firestore.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAyU02Ddr4qrL8VEy9gRxl0KGjILQbyZg0",
+      authDomain: "food-ninja-pwa-b939f.firebaseapp.com",
+      projectId: "food-ninja-pwa-b939f",
+      storageBucket: "food-ninja-pwa-b939f.appspot.com",
+      messagingSenderId: "136751633028",
+      appId: "1:136751633028:web:26944134b40334eac828d1"
+    }
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig)
+    const db = firebase.firestore()
+  </script> -->
+
+  <script src="/public/js/app.js"></script>
+  <script src="/public/js/main.js"></script>
+  <script src="/public/js/db.js"></script>
+</body>
+
+</html>

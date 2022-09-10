@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  /* This keeps all lines looking good. */
+  line-height: calc(1em + 0.5rem);
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+/* Accessible line height. Watch for line height on headings though. */
+/* body {
+  line-height: 1.5;
+} */
+
+/* Ensures percentage based heights will work as expected. 
+Using vh doesn't always work on mobile but % does. */
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  border: none;
+  font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0.67em 0;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* For use in React. It keeps any z-index in the right place. */
+#root,
+#__next {
+  isolation: isolate;
+}

@@ -1,0 +1,47 @@
+// manifest.json
+{
+  "name": "Food Ninja", //name of the app which will show on mobile splash screen
+  "short_name": "FoodNinja", // name under icon on homescreen on mobile
+  "start_url": "/index.html", 
+  "display": "standalone" // will look native to whichever device it's opened on
+  "background_color": "#ffe9d2, //splash screen background_color
+  "theme_color": "#ffe1c4", //top bar color
+  "orientation": "portrait-primary",
+}
+-------------------------------------------------------
+sw.js 
+const assets = [ // basically things that don't change
+  '/', 
+  'index.html' 
+  // basically all the css, js and, home page, main page images, fonts
+]
+DON'T put the sw.js file in here. Changes will never be updated. 
+-------------------------------------------------------
+limit cache size
+check how many cache items there are and delete the oldest
+  after deletion, call the function again in case you're over by
+  more than 1
+call the function inside the fetch event
+-------------------------------------------------------
+install evt
+install the service worker if it's not already
+if it's now then create it 
+-------------------------------------------------------
+activate evt
+check for existing cache (if you don't the page will reuse the original
+  and changes won't be detected)
+delete old caches (Promise.all deletes as many as it finds rather than just one)
+-------------------------------------------------------
+evt.waitUntil() // makes sure the install doesn't end until all assets are installed
+-------------------------------------------------------
+fetch evt
+return cached assets if they exist (cacheRes), if not do the initial request (evt.request) for new assets
+the catch block is checking to see if the file is html (if the if returns false, it returns -1)
+  so if you click a png for example, you'll get the fallback page
+-------------------------------------------------------
+index.html firebase use
+when pasting data from the creation of the db
+duplicate the src line but change the last from firebase-app.js to
+  firebase-firestore.js
+also in the initialize firebase block add
+  const db = firebase.firestore() after firebase.initializeApp
